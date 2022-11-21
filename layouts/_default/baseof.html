@@ -22,8 +22,6 @@
     {{ with .OutputFormats.Get "RSS" }}
       {{ printf `<link href="%s" rel="%s" type="%s" title="%s" />` .Permalink .Rel .MediaType.Type $.Site.Title | safeHTML }}
     {{ end }}
-    {{- partial "opengraph.html" . -}}
-    {{ template "_internal/google_analytics.html" . }}
 
     {{- partial "header.html" . -}}
     {{ if not .Params.mathjax }}{{ partial "mathjax_support.html" . }}{{ end }}
